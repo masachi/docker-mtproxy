@@ -2,7 +2,7 @@ FROM alpine:3.4
 
 COPY ./patches .
 
-RUN patch -p0 -i /patches/randr_compat.patch
+RUN patch -p0 -i randr_compat.patch
 
 ENV SECRET ""
 
