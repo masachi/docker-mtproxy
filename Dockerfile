@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-COPY COPY ./patches .
+COPY ./patches .
 
 RUN patch -p0 -i /patches/randr_compat.patch
 
