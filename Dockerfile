@@ -21,4 +21,4 @@ RUN curl -s https://core.telegram.org/getProxySecret -o proxy-secret && \
 
 EXPOSE 443
 
-CMD ["mtproto-proxy", "-u", "nobody", "-p", "8888", "-H", "443", "-S", "$SECRET", "--aes-pwd", "proxy-secret", "proxy-multi.conf", "-M", "$WORKERS"]
+CMD ["./mtproto-proxy", "-u", "nobody", "-p", "8888", "-H", "443", "-S", "$SECRET", "--aes-pwd", "proxy-secret", "proxy-multi.conf", "-M", "$WORKERS"]
