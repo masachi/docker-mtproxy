@@ -14,8 +14,7 @@ RUN apk add --no-cache --virtual .build-deps \
     # && apk add --virtual .rundeps libcrypto1.0 \
     # && apk del .build-deps
 
-RUN apk add --no-cache curl \
-  && ln -s /usr/lib/libcrypto.so.41 /usr/lib/libcrypto.so.1.0.0
+RUN apk add --no-cache curl
   # alpine:3.7 will need symlink to libcrypto.so.42
 
 WORKDIR /mtproxy
