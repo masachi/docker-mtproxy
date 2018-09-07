@@ -2,13 +2,13 @@ FROM alpine:3.4
 
 COPY ./patches .
 
-RUN patch -p0 -i randr_compat.patch
-
 ENV SECRET ""
 
 ENV WORKERS 1
 
-RUN apk update && apk add git curl g++ make openssl-dev zlib
+RUN apk update && apk add git curl g++ make openssl-dev zlib musl-dev
+
+RUN patch -p0 -i randr_compat.patch
 
 RUN git clone https://github.com/TelegramMessenger/MTProxy
 
