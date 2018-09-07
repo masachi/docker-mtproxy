@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 
 COPY ./patches .
 
@@ -6,7 +6,7 @@ ENV SECRET ""
 
 ENV WORKERS 1
 
-RUN apk update && apk add .build-deps git curl g++ make openssl-dev zlib musl-dev
+RUN apk update && apk add --no-cache --virtual .build-deps git curl g++ make openssl-dev zlib musl-dev linux-headers
 
 RUN patch -p0 -i randr_compat.patch
 
