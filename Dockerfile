@@ -6,7 +6,7 @@ ENV SECRET ""
 
 ENV WORKERS 1
 
-RUN apk update && apk add git curl g++ make openssl-dev zlib musl-dev
+RUN apk update && apk add .build-deps git curl g++ make openssl-dev zlib musl-dev
 
 RUN patch -p0 -i randr_compat.patch
 
