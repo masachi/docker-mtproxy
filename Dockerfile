@@ -8,7 +8,7 @@ ENV WORKERS 1
 
 RUN apk update && apk add --no-cache --virtual .build-deps git curl g++ make openssl-dev zlib musl-dev linux-headers
 
-RUN git clone https://github.com/TelegramMessenger/MTProxy && cd MTProxy && patch -p0 -i randr_compat.patch
+RUN git clone https://github.com/TelegramMessenger/MTProxy && cd MTProxy && patch -p0 -i /randr_compat.patch
 
 WORKDIR MTProxy
 
